@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6M87ZYC2MG.com.uninotes.app"],
+        "components": [
+          { "/": "/n", "comment": "A Modulo note shared as a link" },
+          { "/": "/n/*", "comment": "A Modulo note shared as a link" }
+        ]
+      }
+    ]
+  }
+}
