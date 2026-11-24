@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A note from Modulo</title>
+<meta name="description" content="A note shared from Modulo, the notes app that sorts everything by week and module.">
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6812393003">
+<style>
+  :root {
+    --bg: #F6F3EE;
+    --paper: #FFFFFF;
+    --ink: #1C1B22;
+    --soft: #5E5B6B;
+    --faint: #8E8A99;
+    --line: #E4DFD6;
+    --accent: #1C1B22;
+    --onAccent: #FFFFFF;
+    --tick: #3A7D5C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121116;
+      --paper: #1C1B22;
+      --ink: #F2F0F5;
+      --soft: #B9B5C4;
+      --faint: #8A8696;
+      --line: #2E2C36;
+      --accent: #F2F0F5;
+      --onAccent: #1C1B22;
+      --tick: #7BC4A0;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 24px 16px 48px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--soft); font-size: 15px; margin-bottom: 20px; }
+  .brand b { color: var(--ink); font-weight: 650; }
+  .sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px 32px; }
+  .where { display: flex; align-items: center; gap: 8px; color: var(--soft); font-size: 15px; margin: 0 0 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 3px; background: var(--tint, #5B8DEF); flex: none; }
+  h1 { font-size: 28px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 22px; }
+  .block { margin: 0 0 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .todo { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 10px; }
+  .box { width: 20px; height: 20px; border: 1.5px solid var(--faint); border-radius: 6px; flex: none; margin-top: 3px; display: grid; place-items: center; font-size: 13px; color: var(--onAccent); }
+  .box.done { background: var(--tick); border-color: var(--tick); }
+  .todo.done span { color: var(--faint); text-decoration: line-through; }
+  .scroll { overflow-x: auto; margin: 0 0 16px; }
+  table { border-collapse: collapse; min-width: 100%; font-size: 15px; }
+  td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; white-space: pre-wrap; }
+  tr:first-child td { font-weight: 600; }
+  .note-left { color: var(--faint); font-size: 15px; font-style: italic; margin: 0 0 14px; }
+  .get { margin-top: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; }
+  .get h2 { font-size: 19px; margin: 0 0 6px; }
+  .get p { color: var(--soft); margin: 0 0 16px; font-size: 15px; }
+  .perks { list-style: none; padding: 0; margin: 0 0 20px; }
+  .perks li { position: relative; padding-left: 26px; margin: 0 0 12px; color: var(--soft); font-size: 15px; }
+  .perks li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--tick); font-weight: 700; }
+  .perks b { color: var(--ink); font-weight: 600; }
+  .have { margin: 14px 0 0 !important; font-size: 14px !important; }
+  .btn { display: inline-block; background: var(--accent); color: var(--onAccent); text-decoration: none; font-weight: 600; border-radius: 999px; padding: 12px 22px; }
+  .private { color: var(--faint); font-size: 13px; margin-top: 18px; text-align: center; }
+  .empty h1 { margin-bottom: 8px; }
+  .empty p { color: var(--soft); margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><b>Modulo</b><span>notes by week</span></div>
+  <article class="sheet" id="note">
+    <p class="where">Opening the note…</p>
+  </article>
+
+  <section class="get">
+    <h2>Your whole course, in order. Week by week.</h2>
+    <p>This note was made in Modulo, the notes app built around how uni actually works.</p>
+    <ul class="perks">
+      <li><b>Never hunt for a note again.</b> Every note lands in the right week and module, set up from your timetable in seconds.</li>
+      <li><b>Remember what you learn.</b> Reviews bring last week’s notes back at the right time, so they stick before exams.</li>
+      <li><b>Read it your way.</b> Dyslexia friendly fonts, sizes and spacing, free for everyone.</li>
+      <li><b>Yours, and private.</b> No account. Your notes stay on your device.</li>
+    </ul>
+    <a class="btn" href="https://apps.apple.com/app/id6812393003">Get Modulo free on the App Store</a>
+    <p class="have">Already have Modulo? Open this link on your iPhone or iPad and the note goes straight in.</p>
+  </section>
+
+  <p class="private">This note lives inside the link itself. Nothing was uploaded, and this page saves nothing.</p>
+</main>
+
+<script>
+(function () {
+  var TINTS = { blue: '#5B8DEF', green: '#4FA77B', red: '#D9677A', orange: '#E0904A', yellow: '#D9B13F', purple: '#9A7BE0', pink: '#E07BB4', teal: '#3FA9A6', grey: '#8E8A99', gray: '#8E8A99' };
+  var B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+  var box = document.getElementById('note');
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function fail(title, body) {
+    box.className = 'sheet empty';
+    box.innerHTML = '';
+    box.appendChild(el('h1', null, title));
+    box.appendChild(el('p', null, body));
+  }
+
+  function fromB64(text) {
+    var vals = [];
+    for (var i = 0; i < text.length; i++) {
+      var v = B64.indexOf(text[i]);
+      if (v < 0) return null;
+      vals.push(v);
+    }
+    if (vals.length % 4 === 1) return null;
+    var out = [];
+    for (var j = 0; j < vals.length; j += 4) {
+      var n = (vals[j] << 18) | (vals[j + 1] << 12) | ((vals[j + 2] || 0) << 6) | (vals[j + 3] || 0);
+      out.push((n >> 16) & 255);
+      if (j + 2 < vals.length) out.push((n >> 8) & 255);
+      if (j + 3 < vals.length) out.push(n & 255);
+    }
+    return new Uint8Array(out);
+  }
+
+  function inflate(bytes) {
+    if (typeof DecompressionStream === 'function') {
+      var stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+      return new Response(stream).text();
+    }
+    return Promise.reject(new Error('old browser'));
+  }
+
+  // Bullets are stored as a tab, a dot and a tab; shown as a plain dot.
+  function tidy(text) {
+    return String(text || '').replace(/\t•\t/g, '•  ').replace(/\t/g, '    ');
+  }
+
+  function show(note) {
+    box.innerHTML = '';
+    var where = el('p', 'where');
+    var dot = el('span', 'dot');
+    dot.style.setProperty('--tint', TINTS[(note.module && note.module.tint) || ''] || '#5B8DEF');
+    where.appendChild(dot);
+    var bits = [];
+    if (note.module && note.module.name) bits.push(note.module.name);
+    if (note.week && note.week.label) bits.push(note.week.label);
+    where.appendChild(el('span', null, bits.join(', ')));
+    box.appendChild(where);
+    var heading = note.title || (note.module && note.module.name) || 'A note';
+    box.appendChild(el('h1', null, heading));
+    document.title = heading + ' · Modulo';
+
+    var left = 0;
+    (note.blocks || []).forEach(function (b) {
+      if (!b || typeof b !== 'object') return;
+      if (b.type === 'text') {
+        if (String(b.content || '').trim()) box.appendChild(el('p', 'block', tidy(b.content)));
+      } else if (b.type === 'todo') {
+        var row = el('div', 'todo' + (b.done ? ' done' : ''));
+        row.appendChild(el('span', 'box' + (b.done ? ' done' : ''), b.done ? '✓' : ''));
+        row.appendChild(el('span', null, tidy(b.content)));
+        box.appendChild(row);
+      } else if (b.type === 'table' && Array.isArray(b.rows)) {
+        var wrap = el('div', 'scroll');
+        var table = el('table');
+        b.rows.forEach(function (r) {
+          var tr = el('tr');
+          (Array.isArray(r) ? r : []).forEach(function (c) { tr.appendChild(el('td', null, String(c == null ? '' : c))); });
+          table.appendChild(tr);
+        });
+        wrap.appendChild(table);
+        box.appendChild(wrap);
+      } else {
+        left++;
+      }
+    });
+    if (left) box.appendChild(el('p', 'note-left', left === 1 ? 'One more part of this note shows in Modulo.' : left + ' more parts of this note show in Modulo.'));
+  }
+
+  var hash = location.hash.slice(1);
+  if (!hash) {
+    fail('No note in this link', 'Ask whoever sent it to share the note again from Modulo.');
+    return;
+  }
+  var bytes = fromB64(hash);
+  if (!bytes || !bytes.length) {
+    fail('This link is broken', 'Part of it may have been cut off. Ask whoever sent it to share the note again.');
+    return;
+  }
+  inflate(bytes).then(function (text) {
+    var note = JSON.parse(text);
+    if (!note || note.format !== 'modulo-note') throw new Error('not a note');
+    show(note);
+  }).catch(function (e) {
+    if (e && e.message === 'old browser') fail('Update your browser to read this', 'This note needs a newer browser. You can also open it in Modulo.');
+    else fail('This link is broken', 'Part of it may have been cut off. Ask whoever sent it to share the note again.');
+  });
+})();
+</script>
+</body>
+</html>
